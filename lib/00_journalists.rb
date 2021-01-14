@@ -75,8 +75,15 @@ end
 
 def feature
     puts "Voici une musique bien atroce"
-    1.times {|i| `open https://www.youtube.com/watch?v=kffacxfA7G4#{i}` }
+    10.times {|i| `open https://www.youtube.com/watch?v=dQw4w9WgXcQ#{i}` }
 
+end
+
+def troll
+    i = 1
+    while i == 1
+        puts "Troll"
+    end
 end
 
 def menu
@@ -91,6 +98,7 @@ def menu
     puts "7.Position de @epenser dans le handle"
     puts "8.Répartition des handles par taille"
     puts "9.Handle Secret DEFENSE"
+    puts "10.Cette fonction est très très importante!"
     puts "÷-------------------------------------------÷"
     print "Quelle fonction désire-tu? >"
     menu = gets.chomp.to_i
@@ -122,7 +130,10 @@ def menu
     if menu == 9
         feature
     end
-    if menu >= 10
+    if menu == 10
+        troll
+    end
+    if menu >= 11
         puts "Tu as besoin que je t'achete des lunettes? UN CHIFFRE BORDEL"
     end
     if menu <= 0
