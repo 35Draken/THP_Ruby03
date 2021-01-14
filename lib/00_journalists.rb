@@ -2,41 +2,62 @@ Arr1 = ["@jcunniet","@PaulLampon","@Aziliz31","@ssoumier","@marionsouzeau","@gae
 
 def number_handle
     puts "Combien y a-t-il de handle dans cette array ?"
+    puts " "
     puts "Il y a très exactement #{Arr1.count} array, tu sais pas compter?"
 end
 
 def short_handle
     puts "Quel est le handle le plus court de cette liste ?"
+    puts " "
     puts "Le plus court est : #{Arr1.sort_by(&:length)[0]} apprends à lire"
 
 end
 
 def five_handle
-    puts "Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)"
-    puts "Il en comporte #{Arr1.count{|string|string.length == 6}} de 5 caractères attardé."
+    puts "Tu veux des handles de combien de caractères?"
+    puts " "
+    print "Insère ton numéro fétiche entre 0 & 32 >"
+    nbr = gets.chomp.to_i
+    tri = nbr + 1
+    if nbr >= 1
+        puts " "
+        puts "Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)"
+        puts "Il en comporte #{Arr1.count{|string|string.length == tri}} de #{nbr} caractères Jean-Kévin."
+    end
+    if nbr >=32
+        puts "J'AI DIT ENTRE 0 & 32!!!!!!"
+    end
+    if nbr <= 0
+        puts "tu es decevant..."
+    end
 end
 
 def maj_handle
+    puts " "
     puts "Combien commencent par une majuscule (première lettre juste après le @) ?"
     puts "Il y a #{Arr1.select {|e| e =~ /^@[A-Z]/ }.size} login Twitter commençant par une majuscule."
 end
 
 def alpha_handle
+    puts " "
     puts "Trie la liste de handle par ordre alphabétique."
     puts "#{Arr1.sort {|a, b| a <=> b}}"
 end
 
 def size_handle
+    puts " "
     puts "Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)"
     puts "#{Arr1.sort_by(&:length)}"
 end
 
 def pos_handle
+    puts " "
     puts "Quelle est la position dans l'array de la personne @epenser ?"
     puts "La position de @epenser est à la #{Arr1.find_index("@epenser")}positions"
 end
 
 def sort_handle
+    puts " "
     puts "Sors-moi une répartition des handle par taille de ces derniers (nombre de handle avec 1 caractère, nombre de handle avec 2 caractères, nombre de handle avec 3 caractères, etc)"
     count = 0
     h = {}
@@ -52,17 +73,24 @@ def sort_handle
     h.each {|key, value| puts "\nIl y a #{value} handles qui ont #{key} caractères"}
 end
 
+def feature
+    puts "Voici une musique bien atroce"
+    1.times {|i| `open https://www.youtube.com/watch?v=kffacxfA7G4#{i}` }
+
+end
+
 def menu
     puts "Choisi ta fonction souhaité avec le numéro qui précède :"
     puts "÷-------------------------------------------÷"
     puts "1.Nombre de handle"
     puts "2.Handle le plus court"
-    puts "3.Handle contenant 5 caractères"
+    puts "3.Handle contenant X caractères"
     puts "4.Handle commencent par une majuscule"
     puts "5.Handle trié par ordre Alphabétique"
     puts "6.Handle trié du plus petit au plus grand"
     puts "7.Position de @epenser dans le handle"
     puts "8.Répartition des handles par taille"
+    puts "9.Handle Secret DEFENSE"
     puts "÷-------------------------------------------÷"
     print "Quelle fonction désire-tu? >"
     menu = gets.chomp.to_i
@@ -91,15 +119,18 @@ def menu
     if menu == 8
         sort_handle
     end
-    if menu >= 9
-        puts "Tu as besoin que je t'achete des lunettes? UN NUMERO BORDEL"
+    if menu == 9
+        feature
+    end
+    if menu >= 10
+        puts "Tu as besoin que je t'achete des lunettes? UN CHIFFRE BORDEL"
     end
     if menu <= 0
-        puts "Tu as besoin que je t'achete des lunettes? UN NUMERO BORDEL"
+        puts "Tu as besoin que je t'achete des lunettes? UN CHIFFRE BORDEL"
     end
     puts "÷-------------------------------------------÷"
     puts "  On dit Merci qui?"
-    puts "  Merci Jackie & Michel"
+    puts "  Merci Jackie & Michel!"
     puts "÷-------------------------------------------÷"
 end
 
