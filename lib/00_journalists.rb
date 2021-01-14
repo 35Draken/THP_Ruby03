@@ -54,6 +54,7 @@ end
 
 def menu
     puts "Choisi ta fonction souhaité avec le numéro qui précède :"
+    puts "÷-------------------------------------------÷"
     puts "1.Nombre de handle"
     puts "2.Handle le plus court"
     puts "3.Handle contenant 5 caractères"
@@ -62,6 +63,7 @@ def menu
     puts "6.Handle trié du plus petit au plus grand"
     puts "7.Position de @epenser dans le handle"
     puts "8.Répartition des handles par taille"
+    puts "÷-------------------------------------------÷"
     print "Quelle fonction désire-tu? >"
     menu = gets.chomp.to_i
 
@@ -95,6 +97,10 @@ def menu
     if menu <= 0
         puts "Tu as besoin que je t'achete des lunettes? UN NUMERO BORDEL"
     end
+    puts "÷-------------------------------------------÷"
+    puts "  On dit Merci qui?"
+    puts "  Merci Jackie & Michel"
+    puts "÷-------------------------------------------÷"
 end
 
 menu

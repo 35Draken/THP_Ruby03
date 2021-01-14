@@ -8,29 +8,59 @@ Hash = Hash[name.zip money.map(&:to_f)]
 Id = [0..6000]
 
 def crypt_max
-    puts "La ou les cryptos qui ont la plus grosse valeur"
+    puts "La ou les cryptos qui ont la plus grosse valeur sont donc :"
     puts  Hash.select {|k,v| v == Hash.values.max }
 end
 
 def crypt_min
-    puts "La ou les crypto qui ont la plus petite valeur."
+    puts "La ou les crypto qui ont la plus petite valeur sont donc :"
     puts  Hash.select {|k,v| v == Hash.values.min }
 end
 
 def crypt_six
-    puts "Les devises dont le cours est inférieur à 6000"
+    puts "Les devises dont le cours est inférieur à 6000 sont donc :"
     puts  Hash.select {|k,v| v < 6000}
 end
 
 def crypt_price
-    puts "La devise la plus chère parmi celles dont le cours est inférieur à 6000."
+    puts "La devise la plus chère parmi celles dont le cours est inférieur à 6000 sont donc :"
     slut =  Hash.select {|k,v| v < 6000}
     sput = slut.select {|k,v| v == slut.values.max}
-    puts slut
     puts sput
 end
 
-crypt_max
-crypt_min
-crypt_six
-crypt_price
+def menu
+    puts "Choisi ta fonction souhaité avec le numéro qui précède :"
+    puts "÷-------------------------------------------÷"
+    puts "1.La plus grosse valeur"
+    puts "2.La plus petite valeur"
+    puts "3.Les devises inférieur à 6000"
+    puts "4.La devise la plus chère dont le cours > 6000"
+    puts "÷-------------------------------------------÷"
+    print "Quelle fonction désire-tu? >"
+    menu = gets.chomp.to_i
+
+    if menu == 1
+        crypt_max
+    end
+    if menu == 2
+        crypt_min
+    end
+    if menu == 3
+        crypt_six
+    end
+    if menu == 4
+        crypt_price
+    end
+    if menu >= 5
+        puts "Tu as besoin que je t'achete des lunettes? UN NUMERO BORDEL"
+    end
+    if menu <= 0
+        puts "Tu as besoin que je t'achete des lunettes? UN NUMERO BORDEL"
+    end
+    puts "÷-------------------------------------------÷"
+    puts "  Coucouille! Tu paye ma formation THP hein"
+    puts "÷-------------------------------------------÷"
+end
+
+menu
