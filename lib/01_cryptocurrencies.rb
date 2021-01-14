@@ -25,7 +25,9 @@ end
 def crypt_price
     puts "La devise la plus chère parmi celles dont le cours est inférieur à 6000."
     slut =  Hash.select {|k,v| v < 6000}
-    puts "#{slut.values.max}"
+    sput = slut.select {|k,v| v == slut.values.max}
+    puts slut
+    puts sput
 end
 
 crypt_max
