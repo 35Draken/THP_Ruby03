@@ -8,28 +8,37 @@ Hash = Hash[name.zip money.map(&:to_f)]
 Id = [0..6000]
 
 def crypt_max
+    puts " "
     puts "La ou les cryptos qui ont la plus grosse valeur sont donc :"
+    puts " "
     puts  Hash.select {|k,v| v == Hash.values.max }
 end
 
 def crypt_min
+    puts " "
     puts "La ou les crypto qui ont la plus petite valeur sont donc :"
+    puts " "
     puts  Hash.select {|k,v| v == Hash.values.min }
 end
 
 def crypt_six
+    puts " "
     puts "Les devises dont le cours est inférieur à 6000 sont donc :"
+    puts " "
     puts  Hash.select {|k,v| v < 6000}
 end
 
 def crypt_price
+    puts " "
     puts "La devise la plus chère parmi celles dont le cours est inférieur à 6000 sont donc :"
     slut =  Hash.select {|k,v| v < 6000}
     sput = slut.select {|k,v| v == slut.values.max}
+    puts " "
     puts sput
 end
 
 def menu
+    print "\a"
     puts "Choisi ta fonction souhaité avec le numéro qui précède :"
     puts "÷-------------------------------------------÷"
     puts "1.La plus grosse valeur"
@@ -58,9 +67,10 @@ def menu
     if menu <= 0
         puts "Tu as besoin que je t'achete des lunettes? UN NUMERO BORDEL"
     end
-    puts "÷-------------------------------------------÷"
-    puts "  Coucouille! Tu paye ma formation THP hein"
-    puts "÷-------------------------------------------÷"
+    puts "÷---------------------------------------------÷"
+    puts "  Coucouille! Paye ma formation THP par PayPal"
+    puts "÷---------------------------------------------÷"
+    print "\a"
 end
 
 menu
