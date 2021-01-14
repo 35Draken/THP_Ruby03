@@ -7,3 +7,6 @@ name = ["Bitcoin", "Ethereum", "XRP", "Bitcoin Cash", "EOS", "Litecoin", "Cardan
 h = Hash[name.zip money]
 
 h.each { |k, v| puts }
+
+
+puts "#{hash.max_by{|k,v| v)}"
